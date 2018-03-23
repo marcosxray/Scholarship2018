@@ -10,26 +10,31 @@ import UIKit
 import SceneKit
 import ARKit
 
-class MainViewController: UIViewController {
-    
-    @IBOutlet var sceneView: ARSCNView!
+
+public class MainViewController: UIViewController, ARSCNViewDelegate {
+
+    public var sceneView: ARSCNView!
     var animations = [String: CAAnimation]()
     var idle: Bool = true
-    
+
     let ambientLight = SCNLight()
     let omniLight = SCNLight()
-    
+
     var showItems: Bool = false
     private var x: Float = 0
     private var y: Float = 0
     private var z: Float = 0
     var anchors: [ARPlaneAnchor] = []
     let planeHeight = 0.01
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    override public func loadView() {
+        
+        sceneView = ARSCNView(frame: CGRect(x: 0, y: 0, width: 600, height: 500))
+//        super.viewDidLoad()
         
         // Set the view's delegate
+//        sceneView = ARSCNView(frame: self.view.frame)
+//        self.view.addSubview(sceneView)
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
@@ -90,23 +95,25 @@ class MainViewController: UIViewController {
         sceneView.scene.rootNode.addChildNode(ambientNode)
         
         ////-------------------
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
+        self.view = sceneView
+    }
+
+    override public  func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         // Run the view's session
         sceneView.session.run(getSessionConfiguration())
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
+
+    override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+
         // Pause the view's session
         sceneView.session.pause()
     }
-    
-    private func getSessionConfiguration() -> ARConfiguration {
+
+    public func getSessionConfiguration() -> ARConfiguration {
         if ARWorldTrackingConfiguration.isSupported {
             // Create a session configuration
             let configuration = ARWorldTrackingConfiguration()
@@ -118,17 +125,17 @@ class MainViewController: UIViewController {
             return AROrientationTrackingConfiguration()
         }
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
         let location = touches.first!.location(in: sceneView)
-        
+
         // Let's test if a 3D Object was touched
         var hitTestOptions = [SCNHitTestOption: Any]()
         hitTestOptions[SCNHitTestOption.boundingBoxOnly] = true
-        
+
         let hitResults: [SCNHitTestResult]  = sceneView.hitTest(location, options: hitTestOptions)
-        
+
         if let node = hitResults.first?.node {
             if(idle) {
 //                playAnimation(key: "dancing")
@@ -141,81 +148,76 @@ class MainViewController: UIViewController {
             return
         }
     }
-    
-    func changeColor(node: SCNNode) {
+
+    public func changeColor(node: SCNNode) {
         let material = SCNMaterial()
         material.lightingModel = .physicallyBased
         material.diffuse.contents = UIColor.red
-        
+
         // Add material to the cube node
         node.geometry?.materials = [material]
     }
-    
-    func loadAnimations() {
-        
+
+    public func loadAnimations() {
+
         // Load the character in the idle animation
         let idleScene = SCNScene(named: "art.scnassets/wwdc.DAE")!
-        
+
         // This node will be parent of all the animation models
         let node = SCNNode()
-        
+
         // Add all the child nodes to the parent node
         for child in idleScene.rootNode.childNodes {
             node.addChildNode(child)
         }
-        
+
         // Set up some properties
         node.position = SCNVector3(0, self.y + 0.01, -1)
         node.scale = SCNVector3(0.5, 0.5, 0.5)
-        
+
         // Add the node to the scene
         sceneView.scene.rootNode.addChildNode(node)
-        
+
         // Load all the DAE animations
         //        loadAnimation(withKey: "dancing", sceneName: "art.scnassets/sobe", animationIdentifier: "keyframedAnimations1")
     }
-    
-    
-    func loadAnimation(withKey: String, sceneName:String, animationIdentifier:String) {
-        
+
+
+    public func loadAnimation(withKey: String, sceneName:String, animationIdentifier:String) {
+
         let sceneURL = Bundle.main.url(forResource: sceneName, withExtension: "DAE")
         let sceneSource = SCNSceneSource(url: sceneURL!, options: nil)
-        
+
         if let animationObject = sceneSource?.entryWithIdentifier(animationIdentifier, withClass: CAAnimation.self) {
             // The animation will only play once
             animationObject.repeatCount = 0 // 1
             // To create smooth transitions between animations
             animationObject.fadeInDuration = CGFloat(1)
             animationObject.fadeOutDuration = CGFloat(0.5)
-            
+
             // Store the animation for later use
             animations[withKey] = animationObject
         }
     }
-    
-    func playAnimation(key: String) {
+
+    public func playAnimation(key: String) {
         // Add the animation to start playing it right away
         sceneView.scene.rootNode.addAnimation(animations[key]!, forKey: key)
     }
-    
-    func stopAnimation(key: String) {
+
+    public func stopAnimation(key: String) {
         // Stop the animation with a smooth transition
         sceneView.scene.rootNode.removeAnimation(forKey: key, blendOutDuration: CGFloat(0.5))
     }
-    
-    //----------------------------------------------------------------------------------------
-    
-    
-    
-    func addGeometry() {
+
+    public func addGeometry() {
         loadAnimations()
     }
-}
 
-extension MainViewController: ARSCNViewDelegate {
-    
-    
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    //----------------------------------------------------------------------------------------
+
+
+    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
         guard let lightEstimate = sceneView.session.currentFrame?.lightEstimate else { return }
 
@@ -226,7 +228,7 @@ extension MainViewController: ARSCNViewDelegate {
         self.omniLight.temperature = lightEstimate.ambientColorTemperature
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         // We need async execution to get anchor node's position relative to the root
         DispatchQueue.main.async {
             if let planeAnchor = anchor as? ARPlaneAnchor {
@@ -269,7 +271,7 @@ extension MainViewController: ARSCNViewDelegate {
         }
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+    public func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
 
         var node:  SCNNode?
         if let planeAnchor = anchor as? ARPlaneAnchor {
@@ -290,7 +292,7 @@ extension MainViewController: ARSCNViewDelegate {
         return node
     }
 
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         if let planeAnchor = anchor as? ARPlaneAnchor {
             if anchors.contains(planeAnchor) {
                 if node.childNodes.count > 0 {
@@ -306,18 +308,26 @@ extension MainViewController: ARSCNViewDelegate {
         }
     }
     
-    func session(_ session: ARSession, didFailWithError error: Error) {
+    public func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
     }
     
-    func sessionWasInterrupted(_ session: ARSession) {
+    public func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
         
     }
     
-    func sessionInterruptionEnded(_ session: ARSession) {
+    public func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
 }
+
+//extension MainViewController: ARSCNViewDelegate {
+    
+    
+    
+//}
+
