@@ -1,16 +1,9 @@
-//
-//  SceneManager.swift
-//  Scholarship
-//
-//  Created by Marcos Aires Borges on 20/03/2018.
-//  Copyright © 2018 Marcos Aires Borges. All rights reserved.
-//
 
 import UIKit
 import SceneKit
 import ARKit
 
-class SceneManager: NSObject, ARSCNViewDelegate {
+public class SceneManager: NSObject, ARSCNViewDelegate {
     
     // MARK: - Public variables
     
@@ -85,7 +78,7 @@ class SceneManager: NSObject, ARSCNViewDelegate {
     private func loadAllGeometry() {
         for name in daeNames {
             
-            let fileName = geometryBaseUrl + name + "." + scnExtension
+            let fileName = name + "." + scnExtension
             guard let scene = SCNScene(named: fileName) else { return }
             let node = SCNNode()
             node.name = name
@@ -236,7 +229,7 @@ class SceneManager: NSObject, ARSCNViewDelegate {
         }
         
         material.reflective.contents = UIImage(named: "reflection.jpg")
-        material.reflective.intensity = 0.3
+        material.reflective.intensity = 0.2
         
         
         material.isDoubleSided = true
@@ -248,7 +241,7 @@ class SceneManager: NSObject, ARSCNViewDelegate {
     }
     
     //----------------------------------------------------------------------------------------------------------
-    // MARK: - Animations
+    // Animations
     //----------------------------------------------------------------------------------------------------------
     
     private func loadAnimations(node: SCNNode, name: String) {
@@ -313,7 +306,7 @@ class SceneManager: NSObject, ARSCNViewDelegate {
     }
     
     //----------------------------------------------------------------------------------------------------------
-    // MARK: - hit test
+    // hit test
     //----------------------------------------------------------------------------------------------------------
     
     func hitTest(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -391,10 +384,10 @@ class SceneManager: NSObject, ARSCNViewDelegate {
     }
     
     //----------------------------------------------------------------------------------------------------------
-    // MARK: - ARSCNViewDelegate
+    // ARSCNViewDelegate
     //----------------------------------------------------------------------------------------------------------
     
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let lightEstimate = sceneView?.session.currentFrame?.lightEstimate else { return }
         self.ambientLight.intensity = lightEstimate.ambientIntensity / 12
         self.ambientLight.temperature = lightEstimate.ambientColorTemperature
@@ -402,7 +395,7 @@ class SceneManager: NSObject, ARSCNViewDelegate {
         self.directionalLight.temperature = lightEstimate.ambientColorTemperature
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+    public func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
         if let planeAnchor = anchor as? ARPlaneAnchor, shouldDetectPlane {
             let planeGeometry = SCNBox(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeHeight), length: CGFloat(planeAnchor.extent.z), chamferRadius: 0.0)
             planeGeometry.firstMaterial?.diffuse.contents = UIColor.detectedPlaneColor
@@ -421,13 +414,13 @@ class SceneManager: NSObject, ARSCNViewDelegate {
         return nil
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let _ = anchor as? ARPlaneAnchor {
             detectedPlaneNodes.append(node)
         }
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    public func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         if let planeAnchor = anchor as? ARPlaneAnchor {
             if node.childNodes.count > 0 {
                 let planeNode = node.childNodes.first!
@@ -442,7 +435,7 @@ class SceneManager: NSObject, ARSCNViewDelegate {
         }
     }
     
-    func session(_ session: ARSession, didFailWithError error: Error) {
+    public func session(_ session: ARSession, didFailWithError error: Error) {
         delegate?.sessionDidFail(error: error as NSError)
     }
 }

@@ -8,32 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		75E6AE5820600ACA001D64CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E6AE5720600ACA001D64CC /* AppDelegate.swift */; };
-		75E6AE5A20600ACA001D64CC /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E6AE5920600ACA001D64CC /* art.scnassets */; };
 		75E6AE5C20600ACA001D64CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E6AE5B20600ACA001D64CC /* MainViewController.swift */; };
 		75E6AE6120600ACA001D64CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E6AE6020600ACA001D64CC /* Assets.xcassets */; };
 		75E6AE6420600ACA001D64CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E6AE6220600ACA001D64CC /* LaunchScreen.storyboard */; };
-		75E6AE6F206051B6001D64CC /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E6AE6D206051B6001D64CC /* confetti.png */; };
-		75E6AE70206051B6001D64CC /* SceneKit Particle System.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 75E6AE6E206051B6001D64CC /* SceneKit Particle System.scnp */; };
-		75E6AE73206051E5001D64CC /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 75E6AE71206051E5001D64CC /* spark.png */; };
-		75E6AE74206051E5001D64CC /* Fire.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 75E6AE72206051E5001D64CC /* Fire.scnp */; };
 		75E6AE77206163E5001D64CC /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E6AE76206163E5001D64CC /* SceneManager.swift */; };
 		75E6AE79206164D7001D64CC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E6AE78206164D7001D64CC /* Constants.swift */; };
+		8D249A1120709D2B00AA0660 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D249A1020709D2B00AA0660 /* Storyboard.storyboard */; };
+		8D2901F1206FBF3D00207470 /* reflection.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8D2901F0206FBF3D00207470 /* reflection.jpg */; };
+		8D2901F4206FC29800207470 /* floorOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2901F2206FC29800207470 /* floorOff.png */; };
+		8D2901F5206FC29800207470 /* floorOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2901F3206FC29800207470 /* floorOn.png */; };
+		8DA6502C206C634000EA18D7 /* marcos.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA65028206C633F00EA18D7 /* marcos.png */; };
+		8DA6502D206C634000EA18D7 /* ar3d.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA65029206C634000EA18D7 /* ar3d.png */; };
+		8DA65030206C678B00EA18D7 /* flagBrazil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA6502F206C678B00EA18D7 /* flagBrazil.png */; };
+		8DA65036206C6BED00EA18D7 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA65035206C6BED00EA18D7 /* floor.png */; };
+		8DA65038206E595400EA18D7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA65037206E595400EA18D7 /* WelcomeViewController.swift */; };
+		8DA6503A206E5FA200EA18D7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA65039206E5FA200EA18D7 /* Extensions.swift */; };
+		8DA6503C206E73BA00EA18D7 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA6503B206E73BA00EA18D7 /* BoardView.swift */; };
+		8DA6503E206EBFB000EA18D7 /* mapBrazil.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA6503D206EBFAF00EA18D7 /* mapBrazil.png */; };
+		8DA65042206EEF4600EA18D7 /* tables.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA65041206EEF4500EA18D7 /* tables.png */; };
+		8DA6504C206F3B7600EA18D7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA6504B206F3B7600EA18D7 /* art.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		75E6AE5420600ACA001D64CC /* Scholarship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scholarship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E6AE5720600ACA001D64CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75E6AE5920600ACA001D64CC /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		75E6AE5B20600ACA001D64CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		75E6AE6020600ACA001D64CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75E6AE6320600ACA001D64CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75E6AE6520600ACA001D64CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75E6AE6D206051B6001D64CC /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
-		75E6AE6E206051B6001D64CC /* SceneKit Particle System.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = "SceneKit Particle System.scnp"; sourceTree = "<group>"; };
-		75E6AE71206051E5001D64CC /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		75E6AE72206051E5001D64CC /* Fire.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Fire.scnp; sourceTree = "<group>"; };
 		75E6AE76206163E5001D64CC /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		75E6AE78206164D7001D64CC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8D249A1020709D2B00AA0660 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		8D2901F0206FBF3D00207470 /* reflection.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reflection.jpg; sourceTree = "<group>"; };
+		8D2901F2206FC29800207470 /* floorOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = floorOff.png; path = ../../../textures/new/floorOff.png; sourceTree = "<group>"; };
+		8D2901F3206FC29800207470 /* floorOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = floorOn.png; path = ../../../textures/new/floorOn.png; sourceTree = "<group>"; };
+		8DA65028206C633F00EA18D7 /* marcos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marcos.png; sourceTree = "<group>"; };
+		8DA65029206C634000EA18D7 /* ar3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ar3d.png; sourceTree = "<group>"; };
+		8DA6502F206C678B00EA18D7 /* flagBrazil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flagBrazil.png; sourceTree = "<group>"; };
+		8DA65035206C6BED00EA18D7 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
+		8DA65037206E595400EA18D7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8DA65039206E5FA200EA18D7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8DA6503B206E73BA00EA18D7 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		8DA6503D206EBFAF00EA18D7 /* mapBrazil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapBrazil.png; sourceTree = "<group>"; };
+		8DA65041206EEF4500EA18D7 /* tables.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tables.png; sourceTree = "<group>"; };
+		8DA6504B206F3B7600EA18D7 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,14 +86,19 @@
 			children = (
 				75E6AE752061638D001D64CC /* Source */,
 				75E6AE5720600ACA001D64CC /* AppDelegate.swift */,
-				75E6AE5920600ACA001D64CC /* art.scnassets */,
 				75E6AE6020600ACA001D64CC /* Assets.xcassets */,
 				75E6AE6220600ACA001D64CC /* LaunchScreen.storyboard */,
+				8DA6504B206F3B7600EA18D7 /* art.scnassets */,
 				75E6AE6520600ACA001D64CC /* Info.plist */,
-				75E6AE6D206051B6001D64CC /* confetti.png */,
-				75E6AE6E206051B6001D64CC /* SceneKit Particle System.scnp */,
-				75E6AE71206051E5001D64CC /* spark.png */,
-				75E6AE72206051E5001D64CC /* Fire.scnp */,
+				8DA65029206C634000EA18D7 /* ar3d.png */,
+				8DA65028206C633F00EA18D7 /* marcos.png */,
+				8DA6503D206EBFAF00EA18D7 /* mapBrazil.png */,
+				8DA6502F206C678B00EA18D7 /* flagBrazil.png */,
+				8DA65035206C6BED00EA18D7 /* floor.png */,
+				8DA65041206EEF4500EA18D7 /* tables.png */,
+				8D2901F0206FBF3D00207470 /* reflection.jpg */,
+				8D2901F2206FC29800207470 /* floorOff.png */,
+				8D2901F3206FC29800207470 /* floorOn.png */,
 			);
 			path = Scholarship;
 			sourceTree = "<group>";
@@ -84,8 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				75E6AE5B20600ACA001D64CC /* MainViewController.swift */,
-				75E6AE78206164D7001D64CC /* Constants.swift */,
+				8DA65037206E595400EA18D7 /* WelcomeViewController.swift */,
 				75E6AE76206163E5001D64CC /* SceneManager.swift */,
+				8DA6503B206E73BA00EA18D7 /* BoardView.swift */,
+				8DA65039206E5FA200EA18D7 /* Extensions.swift */,
+				75E6AE78206164D7001D64CC /* Constants.swift */,
+				8D249A1020709D2B00AA0660 /* Storyboard.storyboard */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -149,13 +176,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E6AE5A20600ACA001D64CC /* art.scnassets in Resources */,
-				75E6AE74206051E5001D64CC /* Fire.scnp in Resources */,
+				8DA65036206C6BED00EA18D7 /* floor.png in Resources */,
+				8DA6504C206F3B7600EA18D7 /* art.scnassets in Resources */,
 				75E6AE6420600ACA001D64CC /* LaunchScreen.storyboard in Resources */,
+				8DA65030206C678B00EA18D7 /* flagBrazil.png in Resources */,
+				8D2901F4206FC29800207470 /* floorOff.png in Resources */,
 				75E6AE6120600ACA001D64CC /* Assets.xcassets in Resources */,
-				75E6AE73206051E5001D64CC /* spark.png in Resources */,
-				75E6AE6F206051B6001D64CC /* confetti.png in Resources */,
-				75E6AE70206051B6001D64CC /* SceneKit Particle System.scnp in Resources */,
+				8DA6502D206C634000EA18D7 /* ar3d.png in Resources */,
+				8D2901F1206FBF3D00207470 /* reflection.jpg in Resources */,
+				8DA6502C206C634000EA18D7 /* marcos.png in Resources */,
+				8D249A1120709D2B00AA0660 /* Storyboard.storyboard in Resources */,
+				8D2901F5206FC29800207470 /* floorOn.png in Resources */,
+				8DA65042206EEF4600EA18D7 /* tables.png in Resources */,
+				8DA6503E206EBFB000EA18D7 /* mapBrazil.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA6503C206E73BA00EA18D7 /* BoardView.swift in Sources */,
 				75E6AE5C20600ACA001D64CC /* MainViewController.swift in Sources */,
+				8DA6503A206E5FA200EA18D7 /* Extensions.swift in Sources */,
+				8DA65038206E595400EA18D7 /* WelcomeViewController.swift in Sources */,
 				75E6AE77206163E5001D64CC /* SceneManager.swift in Sources */,
 				75E6AE5820600ACA001D64CC /* AppDelegate.swift in Sources */,
 				75E6AE79206164D7001D64CC /* Constants.swift in Sources */,

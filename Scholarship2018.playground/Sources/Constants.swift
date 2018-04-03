@@ -1,15 +1,6 @@
-//
-//  Constants.swift
-//  Scholarship
-//
-//  Created by Marcos Aires Borges on 20/03/2018.
-//  Copyright © 2018 Marcos Aires Borges. All rights reserved.
-//
-
 
 let planeHeight = 0.001
 let rotationFactor = Float.pi * (35 / 180) // defined based on the euler angle from all models exported from 3DS Max
-let geometryBaseUrl = "art.scnassets/"
 let scnExtension = "scn"
 let daeNames: [String] = ["floor",
                           "actionIcons",
@@ -65,7 +56,7 @@ let projectTitle = "About this project"
 let projectText = "This Swift playground was developed to take advantage of the advanced motion sensors and camera of this device, using ARKit. It has some elements inspired by the 2018’s edition of the WWDC page (they are all interactive). The frameworks used were ARKit, SceneKit, UIKit, and PlaygroundSupport. This Swift Playground will be best experienced when in fullscreen."
 
 let meTitle = "About me"
-let meText = "My name is Marcos, I'm a Brazilian student with a passion for coding, design and 3D modeling/animation. I'm looking forward to the opportunity to be part of the WWDC 2018 in San Jose."
+let meText = "My name is Marcos, I'm a Brazilian student and iOS developer with a passion for coding, design and 3D modeling/animation. I'm looking forward to the opportunity to be part of the WWDC 2018 in San Jose."
 
 let fromTitle = "Where I came from"
 let fromText = "I'm currently living in southern Brazil, in a city called Canoas, from the Rio Grande do Sul region. It's a 78 years old city, with 350 thousand inhabitants."
