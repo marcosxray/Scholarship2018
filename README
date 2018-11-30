@@ -1,0 +1,3 @@
+- This project was created to be submited to Apple's WWDC 2018 Scholarship contest.
+- The challenge was to create an interactive iPad Playground. But since it's very slow to develop and debug a playground, I decided to create a regular project, that could also run on an iPhone and later be adapted to a playground (with its limitations in mind).
+- Since it was a student contest, no architecture other than MVC and no third party framework were used.
